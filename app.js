@@ -25,6 +25,10 @@ app.use(require('./routes/auth'))
 app.use(require('./routes/post'))
 app.use(require('./routes/user'))
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the Instagram Clone API');
+});
+
 app.listen(PORT, ()=>{
     console.log("server is running on ",PORT);
 })
