@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+const cors = require('cors');
 
 // const {MONGOURI} = require('./keys')
 require('dotenv').config()
@@ -19,6 +20,16 @@ mongoose.connection.on('error', (err)=>{
 
 require('./models/user')
 require('./models/post')
+
+// CORS options
+const corsOptions = {
+    origin: 'http://localhost:3000', // Replace with your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow methods you need
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allow headers you need
+};
+
+// Use cors middleware with options
+app.use(cors(corsOptions));
 
 app.use(express.json())
 app.use(require('./routes/auth'))
