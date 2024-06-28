@@ -23,7 +23,7 @@ require('./models/post')
 
 // CORS options
 const corsOptions = {
-    origin: ['http://localhost:3000', 'https://social-media-application-ten.vercel.app/signin'], // Replace with your frontend URL
+    origin: ['https://social-media-application-ten.vercel.app/signin'], // Replace with your frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow methods you need
     allowedHeaders: ['Content-Type', 'Authorization'], // Allow headers you need
 };
